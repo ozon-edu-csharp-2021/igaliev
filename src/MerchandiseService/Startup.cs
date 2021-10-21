@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
 
-namespace OzonEdu.MerchandiseService
+namespace MerchandiseService
 {
     public class Startup
     {
