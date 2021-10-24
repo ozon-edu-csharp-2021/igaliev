@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57AD5693-6B12-49B9-A8EC-6E2C5EC05965}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{1E3643DE-1032-4022-AF83-83A3BE31D26B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		dockerfile = dockerfile
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2A0F4A2E-2865-4558-B135-970D6A0CAC26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OzonEdu.MerchandiseService", "src\OzonEdu.MerchandiseService\OzonEdu.MerchandiseService.csproj", "{0C731A3B-99AC-4598-9B82-D5F60FDECF17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{BFA1C4D4-F796-4A91-8F18-F29506551F7A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C731A3B-99AC-4598-9B82-D5F60FDECF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C731A3B-99AC-4598-9B82-D5F60FDECF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C731A3B-99AC-4598-9B82-D5F60FDECF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C731A3B-99AC-4598-9B82-D5F60FDECF17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C731A3B-99AC-4598-9B82-D5F60FDECF17} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89F6B120-B718-43EC-9188-7993CFA28A15}
+	EndGlobalSection
+EndGlobal
