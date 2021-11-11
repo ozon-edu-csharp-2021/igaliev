@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace MerchandiseService.Infastructure.Repositories
+namespace MerchandiseService.Infrastructure.Repositories
 {
     public class ManagerRepository : IManagerRepository
 

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace MerchandiseService.Infastructure.Commands.CreateMerchOrder
+namespace MerchandiseService.Infrastructure.Commands.CreateMerchOrder
 {
     public class CreateMerchOrderCommand : IRequest<int>
     {

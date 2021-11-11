@@ -1,17 +1,19 @@
 ﻿
+using MediatR;
 using MerchandiseService.Domain.AggregatesModels.PersonsAggregation.EmployeeAggregation;
 using MerchandiseService.Domain.AggregatesModels.PersonsAggregation.ManagerAggregation;
 using MerchandiseService.Domain.MerchOrderAggregation;
-using MerchandiseService.Infastructure.Repositories;
+using MerchandiseService.Infrastructure.Handlers.MerchOrder;
+using MerchandiseService.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace MerchandiseService.Infastructure.Extensions
+namespace MerchandiseService.Infrastructure.Extensions
 {
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
-            services.addMed
+            services.AddMediatR(typeof(CreateMerchOrderCommandHandler).Assembly);
             return services;
         }
 

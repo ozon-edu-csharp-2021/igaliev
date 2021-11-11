@@ -24,6 +24,8 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
             MerchKit = merchKit;
             Status = MerchOrderStatus.Created;
             _orderDate = DateTime.UtcNow;
+
+            
         }
 
         public void SetClothingSize(ClothingSize clothingSize)
