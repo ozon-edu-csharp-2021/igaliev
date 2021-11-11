@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using MerchandiseService.Domain.AggregatesModels.PersonsAggregation.ManagerAggregation;
+﻿using MerchandiseService.Domain.AggregatesModels.PersonsAggregation.ManagerAggregation;
 using MerchandiseService.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.EmployeeAggregation
 {
-    public interface IEmployeeRepository:IRepository<Employee>
+    public interface IEmployeeRepository : IRepository<Employee>
     {
         Employee FindEmployeeByEmail(string email);
 

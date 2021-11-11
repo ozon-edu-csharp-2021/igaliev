@@ -1,11 +1,11 @@
-﻿using System;
+﻿using MerchandiseService.Domain.SeedWork;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using MerchandiseService.Domain.SeedWork;
 
 namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.EmployeeAggregation
 {
-    public class Employee:Entity, IAggregateRoot
+    public class Employee : Entity, IAggregateRoot
     {
         public Employee(PersonName name, Email email, ClothingSize size, PhoneNumber phoneNumber)
         {

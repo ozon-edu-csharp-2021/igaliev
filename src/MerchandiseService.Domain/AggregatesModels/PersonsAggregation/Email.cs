@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using MerchandiseService.Domain.SeedWork;
+﻿using MerchandiseService.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation
 {
-    public class Email:ValueObject
+    public class Email : ValueObject
     {
         public Email(string value)
             => Value = value;
@@ -13,7 +13,7 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation
         public static Email Parse(string number)
         {
             // Do some parsing logic
-            return new (number);
+            return new(number);
         }
 
         protected override IEnumerable<object> GetEqualityComponents()

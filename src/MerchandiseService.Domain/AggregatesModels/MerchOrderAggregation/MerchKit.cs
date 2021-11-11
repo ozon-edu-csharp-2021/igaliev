@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using MerchandiseService.Domain.SeedWork;
+﻿using MerchandiseService.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace MerchandiseService.Domain.MerchOrderAggregation
 {
-    public class MerchKit:Enumeration
+    public class MerchKit : Enumeration
     {
         public bool IsNeedSize;
 
@@ -20,7 +20,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
             Item.Pen,
             Item.TShirt,
             Item.Notepad,
-            
+
         }, true);
 
         public static MerchKit ConferenceListenerPack = new MerchKit(3, nameof(ConferenceListenerPack),

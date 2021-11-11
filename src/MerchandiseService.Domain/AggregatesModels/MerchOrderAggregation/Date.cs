@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MerchandiseService.Domain.SeedWork;
+﻿using MerchandiseService.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace MerchandiseService.Domain.MerchOrderAggregation
 {

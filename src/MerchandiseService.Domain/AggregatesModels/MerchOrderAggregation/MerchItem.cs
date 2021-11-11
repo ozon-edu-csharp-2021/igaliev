@@ -2,7 +2,7 @@
 
 namespace MerchandiseService.Domain.MerchOrderAggregation
 {
-    public class Item:Enumeration
+    public class Item : Enumeration
     {
         public static Item TShirt = new(1, nameof(TShirt));
         public static Item Sweatshirt = new(2, nameof(Sweatshirt));

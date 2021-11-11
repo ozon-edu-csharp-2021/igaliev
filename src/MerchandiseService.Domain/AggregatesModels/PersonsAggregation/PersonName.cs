@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using MerchandiseService.Domain.SeedWork;
+﻿using MerchandiseService.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation
 {
-    public class PersonName:ValueObject
+    public class PersonName : ValueObject
     {
-        public string FirstName { get;}
-        public string LastName { get;}
+        public string FirstName { get; }
+        public string LastName { get; }
         public string MiddleName { get; }
 
         public PersonName(string firstName, string lastName, string middleName)
@@ -15,13 +15,13 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation
             LastName = lastName;
             MiddleName = middleName;
         }
-        
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
             yield return FirstName;
             yield return LastName;
             yield return MiddleName;
         }
-        
+
     }
 }
