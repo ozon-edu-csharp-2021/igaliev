@@ -1,0 +1,27 @@
+﻿syntax = "proto3";
+option csharp_namespace = "MerchandiseService.Grpc";
+package MerchandiseService;
+
+service MerchandiseGrpc{
+  rpc GetMerchItems (GetMerchItemsRequest) returns (GetMerchItemsResponse);
+  rpc GetIssuingMerchInfo (GetIssuingMerchInfoRequest) returns (GetIssuingMerchInfoResponse);
+}
+
+message GetMerchItemsRequest{
+	int64 merch_item_id =1 ;
+	int64 employee_id = 2;
+	string status =3;
+}
+
+message GetIssuingMerchInfoRequest{
+	int64 get_merch_item_request_id = 1;
+}
+
+message GetMerchItemsResponse{
+	int64 request_id = 1;
+}
+
+message GetIssuingMerchInfoResponse{
+	string status =1;
+}
+
