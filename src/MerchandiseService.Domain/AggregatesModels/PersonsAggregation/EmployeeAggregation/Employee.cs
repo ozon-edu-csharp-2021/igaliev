@@ -13,7 +13,7 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.Employee
             Email = email;
             Size = size;
             PhoneNumber = phoneNumber;
-        }
+        } 
 
         public PersonName Name { get; }
 

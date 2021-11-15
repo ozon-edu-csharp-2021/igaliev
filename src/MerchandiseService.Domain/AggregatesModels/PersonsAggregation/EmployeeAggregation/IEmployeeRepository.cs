@@ -27,5 +27,7 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.Employee
         /// Возвращает всех-всех сотрудников
         /// </summary>
         ICollection<Employee> GetAllEmployees();
+        
+
     }
 }
