@@ -25,8 +25,19 @@ namespace MerchandiseService.Infrastructure.Handlers.MerchOrder
 
             merchOrder.SetClothingSize(Enumeration.GetAll<ClothingSize>().FirstOrDefault(size=>size.Id == request.ClothingSize));
             merchOrder.SetManagerId(request.EmployeeId);
-           
+            CheckAvailability();
+            IssueMerch();
             return   _merchOrderRepository.Add(merchOrder,cancellationToken);
+        }
+        private void IssueMerch()
+        {
+            //TODO: запросить мерч, опрокинуть в сигнатуру модельку заказ
+        }
+
+        private bool CheckAvailability()
+        {
+            //TODO проверка на наличие в Stock Api, опрокинуть в сигнатуру модельку заказа
+            throw new System.NotImplementedException();
         }
     }
 }
