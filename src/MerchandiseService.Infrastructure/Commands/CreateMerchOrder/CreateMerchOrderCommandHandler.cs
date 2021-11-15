@@ -12,18 +12,17 @@ namespace MerchandiseService.Infrastructure.Handlers.MerchOrder
     public class CreateMerchOrderCommandHandler:IRequestHandler<CreateMerchOrderCommand,int>
     {
         private readonly IMerchOrderRepository _merchOrderRepository;
-        private readonly IMediator _mediator;
         public CreateMerchOrderCommandHandler(IMerchOrderRepository merchOrderRepository, IMediator mediator)
         {
             _merchOrderRepository = merchOrderRepository;
-            _mediator = mediator;
         }
 
         public  Task<int> Handle(CreateMerchOrderCommand request, CancellationToken cancellationToken)
         {
             //TODO: добавить проверки
             var merchOrder = new Domain.MerchOrderAggregation.MerchOrder(request.EmployeeId, 
-                Enumeration.GetAll<MerchKit>().FirstOrDefault(kit => kit.Id == request.MerchPack));
+                Enumeration.GetAll<MerchKit>().FirstOrDefault(kit => kit.Id == request.MerchKitId));
+
             merchOrder.SetClothingSize(Enumeration.GetAll<ClothingSize>().FirstOrDefault(size=>size.Id == request.ClothingSize));
             merchOrder.SetManagerId(request.EmployeeId);
            

@@ -40,7 +40,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
                 Item.Sweatshirt
             }, true);
 
-        public static MerchKit VeteranPack = new MerchKit(50, nameof(VeteranPack), new List<Item>
+        public static MerchKit VeteranPack = new MerchKit(5, nameof(VeteranPack), new List<Item>
         {
             Item.Pen,
             Item.Notepad,

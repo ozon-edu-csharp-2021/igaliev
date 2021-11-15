@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using MerchandiseService.Domain.MerchOrderAggregation;
 using MerchandiseService.Infrastructure.Commands.CheckIsMerchIssuedCommand;
+using MerchandiseService.Infrastructure.Commands.CreateMerchOrder;
 using MerchandiseService.Infrastructure.Repositories.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -34,10 +35,18 @@ namespace MerchService.Controllers
             return Ok(result);
         }
 
-       [HttpGet("orderMerchKit/{employeeId:int}/{merchKitId:int}")]
-       public async Task<ActionResult<int>> OrderMerchKitForEmployee(int employeeId, int merchKitId, CancellationToken cancelletionToken)
+       [HttpPost("orderMerchKit")]
+       public async Task<ActionResult<int>> OrderMerchKitForEmployee(CreateMerchOrderRequestDto createMerchOrderRequestDto ,CancellationToken cancelletionToken)
         {
-            return Ok(2);
+            var command = new CreateMerchOrderCommand
+            {
+                ClothingSize = createMerchOrderRequestDto.ClothingSize,
+                EmployeeId = createMerchOrderRequestDto.EmployeeId,
+                ManagerId = createMerchOrderRequestDto.ManagerId,
+                MerchKitId = createMerchOrderRequestDto.MerchKitId
+            };
+            var result = await _mediator.Send(command, cancelletionToken);
+            return Ok(result);
         }
     }
    
