@@ -6,6 +6,16 @@ services:
     hostname: stock-api
     ports:
       - "8080:80"
+  stock-api-db:
+    image: postgres:latest
+    ports: 
+      - "9080-90"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: stock-api
+    command:
+      - "-c log_statement-all"
   emailing-service:
     image: 'ghcr.io/ozon-edu-csharp-2021/emailing-service:main'
     hostname:  emailing-service
@@ -13,31 +23,65 @@ services:
       - "8081:81"  
     depends_on:
       - stock-api
+  emailing-service-db:
+    image: postgres:latest
+    ports:
+      - "9081-91"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: emailing-service
+    command:
+      - "-c log_statement-all"
   employees-service:
     image: 'ghcr.io/ozon-edu-csharp-2021/employees-service:main'
     hostname: employees-service
     ports:
-      - "8082:80"
+      - "8082:82"
     depends_on:
       - stock-api
       - emailing-service
+  employees-service-db:
+    image: postgres:latest
+    ports:
+      - "9082-92"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: employees-service
+    command:
+      - "-c log_statement-all"
   supply-service:
     image: 'ghcr.io/ozon-edu-csharp-2021/supply-service:main'
     hostname: supply-service
     ports:
-      - "8083:80"
+      - "8083:83"
     depends_on:
       - stock-api
       - emailing-service
       - employees-service
+  supply-service-db:
+    image: postgres:latest
+    ports:
+      - "9083-93"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: supply-service
+    command:
+      - "-c log_statement-all"
   merchandise-service:
     build: 
       context: ../
       dockerfile: dockerfile
     ports:
-      - "8084-80"
-    depends_on:
-      - stock-api
-      - emailing-service
-      - employees-service
-      - supply-service    
+      - "8084-84"  
+  merchadise-service-db:
+    image: postgres:latest
+    ports:
+      - "9084-5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: merchandise-service
+        

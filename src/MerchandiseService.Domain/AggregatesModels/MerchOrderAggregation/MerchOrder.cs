@@ -15,7 +15,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
         public MerchKit MerchKit { get; }
 
         public ClothingSize ClothingSize { get; private set; }
-
+_статс
         private DateTime _orderDate;
 
         public MerchOrder(long employeeId, MerchKit merchKit)

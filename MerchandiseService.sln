@@ -15,6 +15,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2A0F4A2E-2865-4558-B135-970D6A0CAC26}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deploy", "deploy", "{BFA1C4D4-F796-4A91-8F18-F29506551F7A}"
+ProjectSection(SolutionItems) = preProject
+	deploy\docker-compose.yml = deploy\docker-compose.yml
+EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.Domain", "src\MerchandiseService.Domain\MerchandiseService.Domain.csproj", "{A7D89A99-3C57-4E5B-A8B2-0C8D73D9F9E9}"
 EndProject
@@ -28,7 +31,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.HttpClie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchService", "src\MerchService\MerchService.csproj", "{47C39F93-CE52-454F-899B-3D9F05E2F862}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchandiseService.Domain.Tests", "tests\MerchandiseService.Domain.Tests\MerchandiseService.Domain.Tests.csproj", "{020F7956-3BCF-4B0C-B124-F62AD42E3F78}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.Domain.Tests", "tests\MerchandiseService.Domain.Tests\MerchandiseService.Domain.Tests.csproj", "{020F7956-3BCF-4B0C-B124-F62AD42E3F78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchandiseService.Migrator", "MerchandiseService.Migrator\MerchandiseService.Migrator.csproj", "{C7B57045-4746-4181-9305-50D80A8A4EB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -64,6 +69,10 @@ Global
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +85,7 @@ Global
 		{1644056F-CF1A-40E1-80C1-765431A8BE9C} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 		{47C39F93-CE52-454F-899B-3D9F05E2F862} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78} = {2A0F4A2E-2865-4558-B135-970D6A0CAC26}
+		{C7B57045-4746-4181-9305-50D80A8A4EB1} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89F6B120-B718-43EC-9188-7993CFA28A15}
