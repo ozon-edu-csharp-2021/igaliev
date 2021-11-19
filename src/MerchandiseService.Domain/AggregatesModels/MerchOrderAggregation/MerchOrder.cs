@@ -15,7 +15,6 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
         public MerchKit MerchKit { get; }
 
         public ClothingSize ClothingSize { get; private set; }
-_статс
         private DateTime _orderDate;
 
         public MerchOrder(long employeeId, MerchKit merchKit)
@@ -53,7 +52,7 @@ _статс
         }
         public void SetCancelledStatus()
         {
-            if (Status == MerchOrderStatus.Completed)
+            if (Status.Equals(MerchOrderStatus.Completed) )
             {
                 StatusChangeException(MerchOrderStatus.Completed);
             }
@@ -65,7 +64,7 @@ _статс
         }
         public void SetCompletedStatus()
         {
-            if (Status == MerchOrderStatus.PendingIssue)
+            if (Status .Equals(MerchOrderStatus.PendingIssue))
             {
                 AddDomainEvent(new MerchOrderPendingIssueDomainEvent(Id));
                 Status = MerchOrderStatus.PendingIssue;
@@ -77,7 +76,7 @@ _статс
         }
         public void SetPendingIssueStatus()
         {
-            if (Status == MerchOrderStatus.AwaitingDelivery || Status == MerchOrderStatus.AwaitingVerification)
+            if (Status.Equals(MerchOrderStatus.AwaitingDelivery )|| Status.Equals(MerchOrderStatus.AwaitingVerification))
             {
                 AddDomainEvent(new MerchOrderPendingIssueDomainEvent(Id));
                 Status = MerchOrderStatus.PendingIssue;
@@ -89,7 +88,7 @@ _статс
         }
         public void SetAwaitingDelivery()
         {
-            if (Status == MerchOrderStatus.AwaitingVerification)
+            if (Status.Equals( MerchOrderStatus.AwaitingVerification))
             {
                 AddDomainEvent(new MerchOrderAwaitingDeliveryDomainEvent(Id));
                 Status = MerchOrderStatus.AwaitingDelivery;

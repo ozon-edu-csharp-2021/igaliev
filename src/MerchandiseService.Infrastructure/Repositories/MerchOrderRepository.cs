@@ -4,16 +4,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using MerchandiseService.Infrastructure.Repositories.Infastructure;
+using MerchandiseService.Infrastructure.Repositories.Interfaces;
+using Npgsql;
 
 namespace MerchandiseService.Infrastructure.Repositories
 {
     public class MerchOrderRepository : IMerchOrderRepository
     {
         private List<MerchOrder> _merchOrders;
-        
-        public MerchOrderRepository(List<MerchOrder> merchOrders)
+
+        private readonly IDbConnectionFactory<NpgsqlConnection> _dbConnectionFactory;
+        private readonly IChangeTracker _changeTracker;
+        private const int Timeout = 5;
+
+        public MerchOrderRepository(List<MerchOrder> merchOrders, IDbConnectionFactory<NpgsqlConnection> dbConnectionFactory, IChangeTracker changeTracker)
         {
             _merchOrders = merchOrders;
+            _dbConnectionFactory = dbConnectionFactory;
+            _changeTracker = changeTracker;
         }
 
         public IUnitOfWork UnitOfWork { get; }

@@ -1,87 +1,70 @@
 ﻿version: '3.8'
 
 services:
-  stock-api:
-    image: 'ghcr.io/ozon-edu-csharp-2021/stock-api:main'
-    hostname: stock-api
-    ports:
-      - "8080:80"
-  stock-api-db:
-    image: postgres:latest
-    ports: 
-      - "9080-90"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password123
-      POSTGRES_DB: stock-api
-    command:
-      - "-c log_statement-all"
-  emailing-service:
-    image: 'ghcr.io/ozon-edu-csharp-2021/emailing-service:main'
-    hostname:  emailing-service
-    ports:
-      - "8081:81"  
-    depends_on:
-      - stock-api
-  emailing-service-db:
-    image: postgres:latest
-    ports:
-      - "9081-91"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password123
-      POSTGRES_DB: emailing-service
-    command:
-      - "-c log_statement-all"
-  employees-service:
-    image: 'ghcr.io/ozon-edu-csharp-2021/employees-service:main'
-    hostname: employees-service
-    ports:
-      - "8082:82"
-    depends_on:
-      - stock-api
-      - emailing-service
-  employees-service-db:
-    image: postgres:latest
-    ports:
-      - "9082-92"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password123
-      POSTGRES_DB: employees-service
-    command:
-      - "-c log_statement-all"
-  supply-service:
-    image: 'ghcr.io/ozon-edu-csharp-2021/supply-service:main'
-    hostname: supply-service
-    ports:
-      - "8083:83"
-    depends_on:
-      - stock-api
-      - emailing-service
-      - employees-service
-  supply-service-db:
-    image: postgres:latest
-    ports:
-      - "9083-93"
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password123
-      POSTGRES_DB: supply-service
-    command:
-      - "-c log_statement-all"
-  merchandise-service:
+ #supply-service:
+ #   image: ghcr.io/ozon-edu-csharp-2021/supply-service:main
+ #   environment:
+ #     DbConfiguration__ConnectionString: "Host=host.docker.internal;Port=5426;Database=supply-service;Username=postgres;Password=supplyServicePassword"
+ #   hostname: supply-service
+ #   depends_on:
+ #     - supply-service-db
+ #emailing-service:
+ #   image: ghcr.io/ozon-edu-csharp-2021/emailing-service:main
+ #   hostname: emailing-service
+ #employees-service:
+ #   image: ghcr.io/ozon-edu-csharp-2021/employees-service:main
+ #   hostname: employees-service
+ #   depends_on:
+ #     - employees-service-postgres-db
+ #   volumes:
+ #     - ./src:/src   
+ #stock-api:
+ #   image: ghcr.io/ozon-edu-csharp-2021/stock-api:main
+ #   hostname: stock-api
+ #   environment:
+ #     DatabaseConnectionOptions__ConnectionString: "Host=host.docker.internal;Port=5427;Database=stock-api;Username=postgres;Password=stockApiPassword"
+ #   depends_on:
+ #     - stock-api-db
+ #supply-service-db:
+ #   image: postgres:latest
+ #   ports:
+ #     - "5426:5432"
+ #   environment:
+ #     POSTGRES_USER: postgres
+ #     POSTGRES_PASSWORD: supplyServicePassword
+ #     POSTGRES_DB: supply-service 
+ #employees-service-db:
+ #   image: postgres:latest
+ #   ports:
+ #     - "5425:5432"
+ #   environment:
+ #     POSTGRES_USER: postgres
+ #     POSTGRES_PASSWORD: postgres
+ #     POSTGRES_DB: employees-service
+ #   volumes:
+ #     - ./db/employees-service-postgres-db/dbdata:/var/lib/postgresql/data"
+ #stock-api-db:
+ #   image: postgres:latest
+ #   ports:
+ #     - "5427:5432"
+ #   environment:
+ #     POSTGRES_USER: postgres
+ #     POSTGRES_PASSWORD: stockApiPassword
+ #     POSTGRES_DB: stock-api
+ merchandise-service:
     build: 
       context: ../
       dockerfile: dockerfile
+    hostname: merchandise-service
     ports:
       - "8084-84"  
-  merchadise-service-db:
+ merchadise-service-db:
     image: postgres:latest
     ports:
-      - "9084-5432"
+      - "5426-5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password123
       POSTGRES_DB: merchandise-service
+    command: "-c log_statement=all"
         
