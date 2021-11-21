@@ -50,4 +50,5 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.Employee
             Email = newEmail;
         }
     }
+    
 }

@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using MediatR;
 using MerchandiseService.Domain.MerchOrderAggregation;
-using Microsoft.VisualBasic;
+
 
 namespace MerchandiseService.Infrastructure.Commands.SetAwaitingDeliveryStatusCommand
 {

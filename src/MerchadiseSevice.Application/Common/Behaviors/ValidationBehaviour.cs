@@ -1,11 +1,11 @@
-﻿using FluentValidation;
-using MediatR;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using MediatR;
+using FluentValidation;
 
-namespace MerchandiseService.Infrastructure.Behaviors
+namespace MerchadiseSevice.Application.Common.Behaviors
 {
     public class ValidationBehavior<TRequest, TResponse>
         : IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>

@@ -1,9 +1,7 @@
 ﻿
 using MediatR;
 using MerchandiseService.Domain.AggregatesModels.PersonsAggregation.EmployeeAggregation;
-using MerchandiseService.Domain.AggregatesModels.PersonsAggregation.ManagerAggregation;
 using MerchandiseService.Domain.MerchOrderAggregation;
-using MerchandiseService.Infrastructure.Handlers.MerchOrder;
 using MerchandiseService.Infrastructure.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 

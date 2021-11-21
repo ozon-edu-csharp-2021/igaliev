@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using FluentValidation;
 using MediatR;
+using MerchadiseSevice.Application.Common.Behaviors;
 using MerchandiseService.Infrastructure.Behaviors;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

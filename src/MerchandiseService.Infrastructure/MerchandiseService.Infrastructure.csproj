@@ -9,6 +9,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Commands" />
       <Folder Include="Handlers\DomainEventHandlers\" />
       <Folder Include="Queries" />
     </ItemGroup>

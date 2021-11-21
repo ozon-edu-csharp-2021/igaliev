@@ -1,12 +1,11 @@
-﻿using MerchandiseService.Infrastructure.Repositories.Infastructure;
-using MerchandiseService.Infrastructure.Repositories.Models;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using MerchadiseSevice.Application.Orders.Queries.CheckIsMerchIssuedQuery;
 
-namespace MerchandiseService.Infrastructure.Repositories
+namespace MerchadiseSevice.Application.Interfaces
 {
-    class IssuedKitRepository : IIssuedKitRepository
+    public interface IIssuedKitRepository
     {
         public async Task<KitIssuedDto> CheckIsKitIssuied(int employeeId, int merchKitId, CancellationToken cancellationToken)
         {
