@@ -29,15 +29,15 @@ class Program
         using (serviceProvider.CreateScope())
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
-            //if (args.Contains("--dryrun"))
-            //{
-            //    runner.ListMigrations();
-            //}
-            //else
-            //{
+            if (args.Contains("--dryrun"))
+            {
+                runner.ListMigrations();
+            }
+            else
+            {
                 runner.MigrateUp();
-          //  }
-                
+            }
+
             using var connection = new NpgsqlConnection(connectionString);
             connection.Open();
             connection.ReloadTypes();
