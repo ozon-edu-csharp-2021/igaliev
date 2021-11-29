@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj" />
       <ProjectReference Include="..\MerchandiseService.Domain\MerchandiseService.Domain.csproj" />
     </ItemGroup>
 

@@ -1,19 +1,14 @@
 ﻿using MediatR;
-using MerchandiseService.Domain.MerchOrderAggregation;
-using MerchandiseService.Infrastructure.Commands.CheckIsMerchIssuedCommand;
-using MerchandiseService.Infrastructure.Commands.CreateMerchOrder;
 using MerchandiseService.Infrastructure.Repositories.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using MerchandiseService.Infrastructure.Commands.CreateMerchOrder;
 
 namespace MerchService.Controllers
 {
     [ApiController]
-    [Route("v1/api/issuerequest")]
+    [Route("v1/api/issuedrequest")]
  
     public class IssueRequestController:ControllerBase
     {
@@ -25,15 +20,15 @@ namespace MerchService.Controllers
         }
 
         [HttpGet("is-kit-issued/{employeeId:int}/{merchKitId:int}")]
-        public async Task<ActionResult<KitIssuedDto>> IsMerchKitIssued(int employeeId, int merchKitId, CancellationToken cancelletionToken)
-        {
-            var command = new CheckIsMerchIssuedCommand {
-                EmployeeId = employeeId,
-                MerckKitId = merchKitId
-            };
-            var result = await _mediator.Send(command, cancelletionToken);
-            return Ok(result);
-        }
+       // public async Task<ActionResult<KitIssuedDto>> IsMerchKitIssued(int employeeId, int merchKitId, CancellationToken cancelletionToken)
+       // {
+       //     var command = new CheckIsMerchIssuedCommand {
+           //     EmployeeId = employeeId,
+         //       MerckKitId = merchKitId
+         //   };
+         //   var result = await _mediator.Send(command, cancelletionToken);
+           // return Ok(result);
+      //  }
 
        [HttpPost("orderMerchKit")]
        public async Task<ActionResult<int>> OrderMerchKitForEmployee(CreateMerchOrderRequestDto createMerchOrderRequestDto ,CancellationToken cancelletionToken)

@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj" />
+      <ProjectReference Include="..\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj" />
       <ProjectReference Include="..\MerchandiseService.Domain\MerchandiseService.Domain.csproj" />
       <ProjectReference Include="..\MerchandiseService.Grpc\MerchandiseService.Grpc.csproj" />
       <ProjectReference Include="..\MerchandiseService.Infrastructure\MerchandiseService.Infrastructure.csproj" />

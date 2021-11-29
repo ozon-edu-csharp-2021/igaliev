@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{1E3643
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		dockerfile = dockerfile
+		entrypoint.sh = entrypoint.sh
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -33,9 +34,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchService", "src\MerchSe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.Domain.Tests", "tests\MerchandiseService.Domain.Tests\MerchandiseService.Domain.Tests.csproj", "{020F7956-3BCF-4B0C-B124-F62AD42E3F78}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.Migrator", "src\MerchandiseService.Migrator\MerchandiseService.Migrator.csproj", "{C7B57045-4746-4181-9305-50D80A8A4EB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchadiseSevice.Application", "src\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj", "{6CBEC7E3-2BD3-4056-9AEE-2274897F5669}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchadiseSevice.Application", "src\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj", "{6CBEC7E3-2BD3-4056-9AEE-2274897F5669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandiseService.Migrator", "src\MerchandiseService.Migrator\MerchandiseService.Migrator.csproj", "{07AEE666-117A-4B4E-8E4D-6A563FA630D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,14 +72,14 @@ Global
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C7B57045-4746-4181-9305-50D80A8A4EB1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CBEC7E3-2BD3-4056-9AEE-2274897F5669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6CBEC7E3-2BD3-4056-9AEE-2274897F5669}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBEC7E3-2BD3-4056-9AEE-2274897F5669}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBEC7E3-2BD3-4056-9AEE-2274897F5669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07AEE666-117A-4B4E-8E4D-6A563FA630D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07AEE666-117A-4B4E-8E4D-6A563FA630D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07AEE666-117A-4B4E-8E4D-6A563FA630D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07AEE666-117A-4B4E-8E4D-6A563FA630D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,8 +92,8 @@ Global
 		{1644056F-CF1A-40E1-80C1-765431A8BE9C} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 		{47C39F93-CE52-454F-899B-3D9F05E2F862} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 		{020F7956-3BCF-4B0C-B124-F62AD42E3F78} = {2A0F4A2E-2865-4558-B135-970D6A0CAC26}
-		{C7B57045-4746-4181-9305-50D80A8A4EB1} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 		{6CBEC7E3-2BD3-4056-9AEE-2274897F5669} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
+		{07AEE666-117A-4B4E-8E4D-6A563FA630D8} = {57AD5693-6B12-49B9-A8EC-6E2C5EC05965}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {89F6B120-B718-43EC-9188-7993CFA28A15}

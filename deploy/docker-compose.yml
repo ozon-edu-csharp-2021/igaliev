@@ -57,11 +57,14 @@ services:
       dockerfile: dockerfile
     hostname: merchandise-service
     ports:
-      - "8084-84"  
+      - "8084:84"  
+    environment:
+      DatabaseConnectionOptions__ConnectionString: "Host=host.docker.internal;Port=5424;Database=merchandise-service;Username=postgres;Password=password123"
+    
  merchadise-service-db:
     image: postgres:latest
     ports:
-      - "5426-5432"
+      - "5426:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password123

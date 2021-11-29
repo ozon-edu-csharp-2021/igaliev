@@ -1,11 +1,10 @@
-﻿
-using FluentMigrator;
+﻿using FluentMigrator;
 
 namespace MerchandiseService.Migrator.Migrations
 {
     [Migration(1)]
-    class MerchOrderTable : Migration
-    {
+    public class OrderTable :Migration {
+    
         public override void Down()
         {
             Execute.Sql(@"
