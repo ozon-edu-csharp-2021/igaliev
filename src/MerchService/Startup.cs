@@ -1,10 +1,10 @@
+using System.Reflection;
 using FluentValidation;
 using MediatR;
 using MerchadiseSevice.Application.Common.Behaviors;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace MerchService
 {

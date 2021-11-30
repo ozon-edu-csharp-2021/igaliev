@@ -8,6 +8,11 @@ namespace MerchandiseService.Migrator.Migrations
 
         public override void Down()
         {
+            Execute.Sql("DROP TABLE if exists orders;");
+        }
+
+        public override void Up()
+        {
             Execute.Sql(@"
                  CREATE TABLE if not exists orders(
                     id BIGSERIAL PRIMARY KEY,
@@ -18,11 +23,7 @@ namespace MerchandiseService.Migrator.Migrations
                     merch_pack INT NOT NULL,
                     date_of_issue TIMESTAMP ,);
             ");
-        }
-
-        public override void Up()
-        {
-            Execute.Sql("DROP TABLE if exists orders;");
+          
         }
     }
 }
