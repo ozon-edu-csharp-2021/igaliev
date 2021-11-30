@@ -1,12 +1,12 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MerchandiseService.Domain.MerchOrderAggregation;
+using System.Threading;
+using System.Threading.Tasks;
 
 
 namespace MerchandiseService.Infrastructure.Commands.SetAwaitingDeliveryStatusCommand
 {
-    public class SetAwaitingDeliveryStatusCommandHandler:IRequestHandler<SetAwaitingDeliveryStatusCommand>
+    public class SetAwaitingDeliveryStatusCommandHandler : IRequestHandler<SetAwaitingDeliveryStatusCommand>
     {
         private readonly IMerchOrderRepository _merchOrderRepository;
 
@@ -19,7 +19,7 @@ namespace MerchandiseService.Infrastructure.Commands.SetAwaitingDeliveryStatusCo
         {
             var merchOrder = await _merchOrderRepository.FindByIdAsync(request.OrderId, cancellationToken);
             merchOrder.SetAwaitingDelivery();
-            await _merchOrderRepository.UpdateAsync(merchOrder,cancellationToken);
+            await _merchOrderRepository.UpdateAsync(merchOrder, cancellationToken);
             return Unit.Value;
         }
     }

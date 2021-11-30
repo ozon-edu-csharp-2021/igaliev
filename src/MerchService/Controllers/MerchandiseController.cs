@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace MerchService.Controllers
 {
-   
+
     [ApiController]
     [Route("v1/api/merchandise")]
     [Produces("application/json")]
@@ -35,8 +35,8 @@ namespace MerchService.Controllers
         public async Task<ActionResult<List<MerchItem>>> GetIssuingMerchInfo(long id, CancellationToken token)
         {
 
-            var merchItems = await _merchandiseService.GetIssuingMerchInfo(id,token);
-            if ( String.IsNullOrWhiteSpace(merchItems))
+            var merchItems = await _merchandiseService.GetIssuingMerchInfo(id, token);
+            if (String.IsNullOrWhiteSpace(merchItems))
             {
                 return NotFound();
             }
@@ -44,7 +44,7 @@ namespace MerchService.Controllers
         }
 
         [HttpPost("order/{id:long}")]
-        public async Task<ActionResult<MerchItem>> GetMerchItem(CreateMerchOrderRequestDto createMerchOrderRequestDto,long id, CancellationToken cancelletionToken)
+        public async Task<ActionResult<MerchItem>> GetMerchItem(CreateMerchOrderRequestDto createMerchOrderRequestDto, long id, CancellationToken cancelletionToken)
         {
 
             var command = new CreateMerchOrderCommand

@@ -1,8 +1,8 @@
-﻿using System;
-using MerchService.GrpcService;
+﻿using MerchService.GrpcService;
 using MerchService.Infastructure.Middlewares;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using System;
 
 namespace MerchService.Infastructure.StartupFilter
 {
@@ -15,10 +15,10 @@ namespace MerchService.Infastructure.StartupFilter
                 app.Map("/version", builder => builder.UseMiddleware<VersionMiddleware>());
                 app.Map("/live", builder => builder.UseMiddleware<LiveMiddleware>());
                 app.Map("/ready", builder => builder.UseMiddleware<ReadyMiddleware>());
-                
+
                 app.UseMiddleware<RequestLoggingMiddleware>();
                 app.UseMiddleware<ResponseLoggingMiddleware>();
-                
+
                 app.UseRouting();
                 app.UseEndpoints(endpoints =>
                 {

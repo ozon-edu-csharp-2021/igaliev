@@ -1,11 +1,11 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MerchadiseSevice.Application.Interfaces;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MerchadiseSevice.Application.Orders.Queries.CheckIsMerchIssuedQuery
 {
-    public class CheckIsMerchIssuedQueryHandler: IRequestHandler<CheckIsMerchIssuedQuery,KitIssuedDto>
+    public class CheckIsMerchIssuedQueryHandler : IRequestHandler<CheckIsMerchIssuedQuery, KitIssuedDto>
 
     {
         //TODO: опрокинуть репозиторий через UnitOfWork и зарегистрировать его в сервисах
@@ -19,5 +19,5 @@ namespace MerchadiseSevice.Application.Orders.Queries.CheckIsMerchIssuedQuery
             return result;
         }
     }
-    
+
 }

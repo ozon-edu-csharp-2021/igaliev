@@ -1,11 +1,11 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MerchandiseService.Domain.Events;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MerchandiseService.Infrastructure.Handlers.DomainEventHandlers
 {
-    public class MerchOrderAwaitingDeliveryDomainEventHandler:INotificationHandler<MerchOrderAwaitingDeliveryDomainEvent>
+    public class MerchOrderAwaitingDeliveryDomainEventHandler : INotificationHandler<MerchOrderAwaitingDeliveryDomainEvent>
     {
         //TODO:
         public Task Handle(MerchOrderAwaitingDeliveryDomainEvent notification, CancellationToken cancellationToken)

@@ -36,7 +36,7 @@ namespace MerchandiseService.Domain.Tests
 
             var merchOrder = new MerchOrder(1, MerchKit.WelcomePack);
 
-            Assert.Equal(merchOrder.Status,MerchOrderStatus.Created );
+            Assert.Equal(merchOrder.Status, MerchOrderStatus.Created);
 
         }
         [Fact]
@@ -56,9 +56,9 @@ namespace MerchandiseService.Domain.Tests
             var merchOrder = new MerchOrder(1, MerchKit.WelcomePack);
 
 
-                Assert.Throws<DomainOrderException>(() => merchOrder.SetCompletedStatus());
+            Assert.Throws<DomainOrderException>(() => merchOrder.SetCompletedStatus());
 
-            }
+        }
         [Fact]
         public void SetPendingIssueStatus()
         {
@@ -67,17 +67,17 @@ namespace MerchandiseService.Domain.Tests
 
 
 
-                Assert.Throws<DomainOrderException>(() => merchOrder.SetPendingIssueStatus());
+            Assert.Throws<DomainOrderException>(() => merchOrder.SetPendingIssueStatus());
 
-            }
+        }
         [Fact]
         public void SetAwaitingDelivery()
         {
 
             var merchOrder = new MerchOrder(1, MerchKit.WelcomePack);
 
-                Assert.Throws<DomainOrderException>(() => merchOrder.SetAwaitingDelivery());
+            Assert.Throws<DomainOrderException>(() => merchOrder.SetAwaitingDelivery());
 
-         }
+        }
     }
 }

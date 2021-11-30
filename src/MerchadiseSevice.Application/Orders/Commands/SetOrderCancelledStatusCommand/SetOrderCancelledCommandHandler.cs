@@ -1,11 +1,11 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MerchandiseService.Domain.MerchOrderAggregation;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MerchandiseService.Infrastructure.Commands.SetOrderCancelledStatusCommand
 {
-    public class SetOrderCancelledCommandHandler:IRequestHandler<SetOrderCancelledStatusCommand>
+    public class SetOrderCancelledCommandHandler : IRequestHandler<SetOrderCancelledStatusCommand>
     {
         private readonly IMerchOrderRepository _merchOrderRepository;
 
@@ -18,7 +18,7 @@ namespace MerchandiseService.Infrastructure.Commands.SetOrderCancelledStatusComm
         {
             var merchOrder = await _merchOrderRepository.FindByIdAsync(request.OrderId, cancellationToken);
             merchOrder.SetCancelledStatus();
-            await _merchOrderRepository.UpdateAsync(merchOrder,cancellationToken);
+            await _merchOrderRepository.UpdateAsync(merchOrder, cancellationToken);
             return Unit.Value;
 
         }

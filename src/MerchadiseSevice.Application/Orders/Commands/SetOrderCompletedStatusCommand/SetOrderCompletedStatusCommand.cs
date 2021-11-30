@@ -2,7 +2,7 @@
 
 namespace MerchandiseService.Infrastructure.Commands.SetOrderCompletedStatusCommand
 {
-    public class SetOrderCompletedStatusCommand:IRequest
+    public class SetOrderCompletedStatusCommand : IRequest
     {
         public SetOrderCompletedStatusCommand(int orderId)
         {

@@ -1,9 +1,4 @@
 ﻿using FluentMigrator;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MerchandiseService.Migrator.Migrations
 {
@@ -20,7 +15,7 @@ namespace MerchandiseService.Migrator.Migrations
                 .WithColumn("middle_name").AsString().NotNullable()
                 .WithColumn("emai").AsString().NotNullable()
                 .WithColumn("clothing_size").AsInt32().NotNullable();
-                
+
             //Execute.Sql(@"
             //    CREATE TABLE if not exists employees(
             //        id BIGSERIAL PRIMARY KEY,

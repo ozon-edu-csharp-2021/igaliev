@@ -1,6 +1,6 @@
-﻿using System.Threading;
+﻿using MerchService.Models;
+using System.Threading;
 using System.Threading.Tasks;
-using MerchService.Models;
 
 namespace MerchService.Services
 {

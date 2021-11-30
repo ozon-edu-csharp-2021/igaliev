@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace MerchService.Models
+﻿namespace MerchService.Models
 {
     public class GetMerchItemRequestModel
     {
@@ -14,8 +9,8 @@ namespace MerchService.Models
             Status = status;
         }
 
-        long Id { get;  }
-        long EmployeeId { get;  }
-        string Status { get;  }
+        long Id { get; }
+        long EmployeeId { get; }
+        string Status { get; }
     }
 }

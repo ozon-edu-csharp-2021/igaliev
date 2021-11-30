@@ -2,7 +2,7 @@
 
 namespace MerchandiseService.Infrastructure.Commands.CreateMerchOrder
 {
-    public class CreateMerchOrderCommand : IRequest<int>
+    public class CreateMerchOrderCommand : IRequest
     {
         public long EmployeeId { get; set; }
         public long ManagerId { get; set; }

@@ -1,14 +1,14 @@
-﻿using System.Data;
-using System.Threading;
-using System.Threading.Tasks;
-using MerchandiseService.Infrastructure.Configuration;
+﻿using MerchandiseService.Infrastructure.Configuration;
 using MerchandiseService.Infrastructure.Repositories.Interfaces;
 using Microsoft.Extensions.Options;
 using Npgsql;
+using System.Data;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MerchandiseService.Infrastructure.Repositories.Infastructure
 {
-    public class NpgsqlConnectionFactory:IDbConnectionFactory<NpgsqlConnection>
+    public class NpgsqlConnectionFactory : IDbConnectionFactory<NpgsqlConnection>
     {
         private readonly DatabaseConnectionOptions _options;
         private NpgsqlConnection _connection;

@@ -21,10 +21,10 @@ namespace MerchService.Infastructure.Extensions
                 services.AddGrpc(options => options.Interceptors.Add<LoggingInterceptor>());
                 services.AddSingleton<IStartupFilter, TerminalStartupFilter>();
                 services.AddSingleton<IStartupFilter, SwaggerStartupFilter>();
-                
+
                 services.AddSwaggerGen(options =>
                 {
-                    options.SwaggerDoc("v1", new OpenApiInfo {Title = "MerchandiseService", Version = "v1"});
+                    options.SwaggerDoc("v1", new OpenApiInfo { Title = "MerchandiseService", Version = "v1" });
                     options.CustomSchemaIds(x => x.FullName);
                     options.OperationFilter<HeadOperationFilter.HeaderOperationFilter>();
                 });

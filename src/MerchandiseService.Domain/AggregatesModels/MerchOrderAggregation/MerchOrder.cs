@@ -8,14 +8,15 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
 {
     public class MerchOrder : Entity, IAggregateRoot
     {
-        public MerchOrderStatus Status { get; private set; }
-
+        public MerchOrderStatus Status { get; set; }
+        public Employee Employee { get; set; }
         public long EmployeeId { get; }
         public long ManagerId { get; private set; }
         public MerchKit MerchKit { get; }
 
         public ClothingSize ClothingSize { get; private set; }
         private DateTime _orderDate;
+        public DateTime IssuedDate { get; set; }
 
         public MerchOrder(long employeeId, MerchKit merchKit)
         {
@@ -24,7 +25,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
             Status = MerchOrderStatus.Created;
             _orderDate = DateTime.UtcNow;
 
-            
+
         }
 
         public void SetClothingSize(ClothingSize clothingSize)
@@ -52,7 +53,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
         }
         public void SetCancelledStatus()
         {
-            if (Status.Equals(MerchOrderStatus.Completed) )
+            if (Status.Equals(MerchOrderStatus.Completed))
             {
                 StatusChangeException(MerchOrderStatus.Completed);
             }
@@ -64,7 +65,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
         }
         public void SetCompletedStatus()
         {
-            if (Status .Equals(MerchOrderStatus.PendingIssue))
+            if (Status.Equals(MerchOrderStatus.PendingIssue))
             {
                 AddDomainEvent(new MerchOrderPendingIssueDomainEvent(Id));
                 Status = MerchOrderStatus.PendingIssue;
@@ -76,7 +77,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
         }
         public void SetPendingIssueStatus()
         {
-            if (Status.Equals(MerchOrderStatus.AwaitingDelivery )|| Status.Equals(MerchOrderStatus.AwaitingVerification))
+            if (Status.Equals(MerchOrderStatus.AwaitingDelivery) || Status.Equals(MerchOrderStatus.AwaitingVerification))
             {
                 AddDomainEvent(new MerchOrderPendingIssueDomainEvent(Id));
                 Status = MerchOrderStatus.PendingIssue;
@@ -88,7 +89,7 @@ namespace MerchandiseService.Domain.MerchOrderAggregation
         }
         public void SetAwaitingDelivery()
         {
-            if (Status.Equals( MerchOrderStatus.AwaitingVerification))
+            if (Status.Equals(MerchOrderStatus.AwaitingVerification))
             {
                 AddDomainEvent(new MerchOrderAwaitingDeliveryDomainEvent(Id));
                 Status = MerchOrderStatus.AwaitingDelivery;

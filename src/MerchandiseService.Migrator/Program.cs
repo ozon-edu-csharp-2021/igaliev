@@ -1,9 +1,8 @@
-﻿using System.IO;
-using System.Linq;
-using FluentMigrator.Runner;
+﻿using FluentMigrator.Runner;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Npgsql;
+using System.IO;
 
 class Program
 {
@@ -25,7 +24,7 @@ class Program
                     .For.Migrations());
 
         var serviceProvider = services.BuildServiceProvider();
-            
+
         using (serviceProvider.CreateScope())
         {
             var runner = serviceProvider.GetRequiredService<IMigrationRunner>();
@@ -35,9 +34,9 @@ class Program
             //}
             //else
             //{
-                runner.MigrateUp();
-          //  }
-                
+            runner.MigrateUp();
+            //  }
+
             using var connection = new NpgsqlConnection(connectionString);
             connection.Open();
             connection.ReloadTypes();

@@ -3,8 +3,9 @@
 namespace MerchandiseService.Migrator.Migrations
 {
     [Migration(1)]
-    public class OrderTable :Migration {
-    
+    public class OrderTable : Migration
+    {
+
         public override void Down()
         {
             Execute.Sql(@"

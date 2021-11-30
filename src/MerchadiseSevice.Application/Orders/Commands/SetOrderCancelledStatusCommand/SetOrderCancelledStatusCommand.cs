@@ -2,7 +2,7 @@
 
 namespace MerchandiseService.Infrastructure.Commands.SetOrderCancelledStatusCommand
 {
-    public class SetOrderCancelledStatusCommand:IRequest
+    public class SetOrderCancelledStatusCommand : IRequest
     {
         public SetOrderCancelledStatusCommand(int orderId)
         {

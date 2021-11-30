@@ -1,11 +1,11 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MerchandiseService.Domain.MerchOrderAggregation;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MerchandiseService.Infrastructure.Commands.SetPendingIssueCommand
 {
-    public class SetPendingIssueCommandHandler:IRequestHandler<SetPendingIssueCommand>
+    public class SetPendingIssueCommandHandler : IRequestHandler<SetPendingIssueCommand>
     {
         private readonly IMerchOrderRepository _merchOrderRepository;
 
@@ -18,7 +18,7 @@ namespace MerchandiseService.Infrastructure.Commands.SetPendingIssueCommand
         {
             var merchOrder = await _merchOrderRepository.FindByIdAsync(request.OrderId, cancellationToken);
             merchOrder.SetPendingIssueStatus();
-            await _merchOrderRepository.UpdateAsync(merchOrder,cancellationToken);
+            await _merchOrderRepository.UpdateAsync(merchOrder, cancellationToken);
             return Unit.Value;
         }
     }

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using MerchadiseSevice.Application.Orders.Queries.CheckIsMerchIssuedQuery;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
-using MerchadiseSevice.Application.Orders.Queries.CheckIsMerchIssuedQuery;
 
 namespace MerchadiseSevice.Application.Interfaces
 {

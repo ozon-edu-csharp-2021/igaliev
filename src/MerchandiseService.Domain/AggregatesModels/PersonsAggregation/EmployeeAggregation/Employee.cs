@@ -5,15 +5,15 @@ using System.Linq;
 
 namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.EmployeeAggregation
 {
-    public class Employee : Entity, IAggregateRoot
+    public class Employee : Entity,IAggregateRoot
     {
-        public Employee(PersonName name, Email email, ClothingSize size, PhoneNumber phoneNumber)
+        public Employee(PersonName name, Email email, ClothingSize size)
         {
             Name = name;
             Email = email;
             Size = size;
-            PhoneNumber = phoneNumber;
-        } 
+
+        }
 
         public PersonName Name { get; }
 
@@ -28,7 +28,7 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.Employee
 
         public void ChangeEmail(Email newEmail, IEmployeeRepository repository)
         {
-            var existingEmployee = repository.FindEmployeeByEmail(newEmail.Value);
+            var existingEmployee = repository.FindByEmailAsync(newEmail.Value);
 
             if (existingEmployee != null && existingEmployee.Id != Id)
             {
@@ -50,5 +50,5 @@ namespace MerchandiseService.Domain.AggregatesModels.PersonsAggregation.Employee
             Email = newEmail;
         }
     }
-    
+
 }

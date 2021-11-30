@@ -2,7 +2,7 @@
 
 namespace MerchandiseService.Infrastructure.Commands.SetAwaitingVerificationStatusCommand
 {
-    public class SetAwaitingVerificationStatusCommand:IRequest
+    public class SetAwaitingVerificationStatusCommand : IRequest
     {
         public SetAwaitingVerificationStatusCommand(int orderId)
         {

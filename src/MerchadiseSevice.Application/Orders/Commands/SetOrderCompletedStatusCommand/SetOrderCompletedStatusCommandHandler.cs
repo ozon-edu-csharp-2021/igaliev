@@ -1,11 +1,11 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
-using MediatR;
+﻿using MediatR;
 using MerchandiseService.Domain.MerchOrderAggregation;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace MerchandiseService.Infrastructure.Commands.SetOrderCompletedStatusCommand
 {
-    public class SetOrderCompletedStatusCommandHandler:IRequestHandler<SetOrderCompletedStatusCommand>
+    public class SetOrderCompletedStatusCommandHandler : IRequestHandler<SetOrderCompletedStatusCommand>
     {
         private readonly IMerchOrderRepository _merchOrderRepository;
 
@@ -14,11 +14,11 @@ namespace MerchandiseService.Infrastructure.Commands.SetOrderCompletedStatusComm
             _merchOrderRepository = merchOrderRepository;
         }
 
-        public async  Task<Unit> Handle(SetOrderCompletedStatusCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(SetOrderCompletedStatusCommand request, CancellationToken cancellationToken)
         {
             var merchOrder = await _merchOrderRepository.FindByIdAsync(request.OrderId, cancellationToken);
             merchOrder.SetCompletedStatus();
-            await _merchOrderRepository.UpdateAsync(merchOrder,cancellationToken);
+            await _merchOrderRepository.UpdateAsync(merchOrder, cancellationToken);
             return Unit.Value;
         }
     }
