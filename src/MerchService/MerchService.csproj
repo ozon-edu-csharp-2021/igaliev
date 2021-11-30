@@ -1,16 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.4" />
       <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+      <PackageReference Include="MediatR" Version="9.0.0" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     </ItemGroup>
 
     <ItemGroup>
+	  <ProjectReference Include="..\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj" />
+      <ProjectReference Include="..\MerchandiseService.Domain\MerchandiseService.Domain.csproj" />
       <ProjectReference Include="..\MerchandiseService.Grpc\MerchandiseService.Grpc.csproj" />
+      <ProjectReference Include="..\MerchandiseService.Infrastructure\MerchandiseService.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Infastructure\Behaviors\" />
     </ItemGroup>
 
 </Project>
+  

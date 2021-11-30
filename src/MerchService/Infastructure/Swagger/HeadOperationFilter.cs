@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using System.Collections.Generic;
 
 namespace MerchService.Infastructure.Swagger
 {
@@ -16,7 +16,7 @@ namespace MerchService.Infastructure.Swagger
                     In = ParameterLocation.Header,
                     Name = "out-hearer",
                     Required = false,
-                    Schema = new OpenApiSchema{Type = "string"}
+                    Schema = new OpenApiSchema { Type = "string" }
                 });
             }
         }

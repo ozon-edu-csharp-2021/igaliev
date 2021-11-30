@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace MerchService.Infastructure.Filters
 {
-    public class GlobalExceptionFilter:ExceptionFilterAttribute
+    public class GlobalExceptionFilter : ExceptionFilterAttribute
     {
         public override void OnException(ExceptionContext context)
         {
@@ -18,7 +18,7 @@ namespace MerchService.Infastructure.Filters
             };
 
             var jsonresult = new JsonResult(resultObject);
-            
+
             context.Result = jsonresult;
         }
     }

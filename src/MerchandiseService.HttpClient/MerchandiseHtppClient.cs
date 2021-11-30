@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MerchandiseService.HttpClient
 {
-    public class MerchandiseHtppClient:IMerchandiseHttpClient
+    public class MerchandiseHtppClient : IMerchandiseHttpClient
     {
         private readonly System.Net.Http.HttpClient _httpClient;
 

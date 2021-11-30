@@ -1,9 +1,7 @@
+using Microsoft.AspNetCore.Http;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 namespace MerchService.Infastructure.Middlewares
 {
@@ -15,7 +13,7 @@ namespace MerchService.Infastructure.Middlewares
         {
             var version = Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "no version";
             var name = Assembly.GetExecutingAssembly().GetName().Name;
-            
+
 
             var infoObject = new
             {

@@ -1,13 +1,13 @@
-﻿using System.Threading.Tasks;
-using Grpc.Core;
+﻿using Grpc.Core;
 using MerchandiseService.Grpc;
 using MerchService.Models;
 using MerchService.Services;
+using System.Threading.Tasks;
 
 
 namespace MerchService.GrpcService
 {
-    public class MerchandiseGrpcService: MerchandiseGrpc.MerchandiseGrpcBase
+    public class MerchandiseGrpcService : MerchandiseGrpc.MerchandiseGrpcBase
     {
         private readonly IMerchandiseService _merchandiseService;
 
@@ -20,7 +20,8 @@ namespace MerchService.GrpcService
         {
             var merchItemReqeustModel = new GetMerchItemRequestModel(request.MerchItemId, request.EmployeeId, request.Status);
             var requestId = await _merchandiseService.GetMerchItems(merchItemReqeustModel, new System.Threading.CancellationToken());
-            return new GetMerchItemsResponse() {
+            return new GetMerchItemsResponse()
+            {
                 RequestId = requestId
             };
 
@@ -29,13 +30,13 @@ namespace MerchService.GrpcService
         public override async Task<GetIssuingMerchInfoResponse> GetIssuingMerchInfo(GetIssuingMerchInfoRequest request, ServerCallContext context)
         {
             var merchInfoId = request.GetMerchItemRequestId;
-            var status =await  _merchandiseService.GetIssuingMerchInfo(merchInfoId, new System.Threading.CancellationToken());
+            var status = await _merchandiseService.GetIssuingMerchInfo(merchInfoId, new System.Threading.CancellationToken());
 
             return new GetIssuingMerchInfoResponse()
             {
                 Status = status
             };
-           
+
         }
     }
 }

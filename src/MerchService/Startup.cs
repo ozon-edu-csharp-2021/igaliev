@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Reflection;
+using FluentValidation;
+using MediatR;
+using MerchadiseSevice.Application.Common.Behaviors;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 
 namespace MerchService
 {
@@ -14,11 +12,15 @@ namespace MerchService
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services
+    .AddValidatorsFromAssemblies(new[] { Assembly.GetExecutingAssembly() });
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(ValidationBehavior<,>));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-        
+
         }
     }
 }

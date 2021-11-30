@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MerchadiseSevice.Application\MerchadiseSevice.Application.csproj" />
+      <ProjectReference Include="..\MerchandiseService.Domain\MerchandiseService.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Commands" />
+      <Folder Include="Handlers\DomainEventHandlers\" />
+      <Folder Include="Queries" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.0.123" />
+      <PackageReference Include="FluentValidation" Version="10.3.4" />
+      <PackageReference Include="MediatR" Version="9.0.0" />
+      <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.1" />
+      <PackageReference Include="Npgsql" Version="6.0.0" />
+    </ItemGroup>
+
+</Project>
